@@ -33,7 +33,10 @@ class Chart extends StatelessWidget {
               children: calorieCountPerDay.map((e) {
             return Flexible(
               fit: FlexFit.tight,
-              child: Bars(calTarget: (e['calories'] as int) /targetCal ,day: e['day'],calories: e['calories'],));
+              child: Container(
+                // height: 120,
+                // width: 10,
+                child: Bars(calTarget: ((e['calories'] as int) > targetCal) ? 1 : (e['calories'] as int) /targetCal ,day: e['day'],calories: e['calories'],)));
           }).toList()),
         ),
       ),

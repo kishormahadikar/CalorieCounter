@@ -36,7 +36,9 @@ class ItemsList extends StatelessWidget {
                             child: ListTile(
                               leading: CircleAvatar(
                                 radius: 35,
-                                child: Text('${foodHere[index].calories}'),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text('${foodHere[index].calories}')),
                               ),
                               title: Text('${foodHere[index].title}'),
                               subtitle: Text(
